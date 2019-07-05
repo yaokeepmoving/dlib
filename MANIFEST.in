@@ -3,20 +3,15 @@
 #
 # Manifest template for creating the dlib source distribution.
 
+
 include MANIFEST.in
 include setup.py
 include README.md
 
 # sources
 recursive-include dlib **
-recursive-exclude dlib/test **
-recursive-exclude dlib/build **
-recursive-exclude docs **
-recursive-include python_examples *.txt *.py *.bat
-recursive-exclude python_examples/build **
+recursive-include python_examples *.txt *.py 
 recursive-include tools/python **
-recursive-exclude tools/python/build **
 
-# dlib package
-recursive-include dist/dlib **
-
+prune tools/python/build*
+prune dlib/test
